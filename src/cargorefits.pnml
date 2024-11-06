@@ -1,0 +1,16 @@
+/*
+ * Copyright (C) 2017 Transportman
+ * This file is part of the 2cc Trains In NML and is based on The Dutch Trainset 2.0 by Jasper Vries
+ * This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+ * This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+
+//this file lists all cargo refits for each wagon type.
+//it is referenced from the wagon item definitions.
+//any changes to cargo refits can be done centrally from this file.
+
+
+
+//The old set also allowed carrying of MAIL and Valuables in passenger trains
+#define CARGODEF_GDS refittable_cargo_classes: bitmask(CC_MAIL, CC_ARMOURED, CC_PIECE_GOODS, CC_OVERSIZED, CC_LIQUIDCC_BULK); non_refittable_cargo_classes: 0; cargo_allow_refit: [COAL, MAIL, OIL_, LVST, GOOD, GRAI, WOOD, IORE, STEL, VALU, PAPR, WHEA, FOOD, GOLD, RUBR, FRUT, MAIZ, CORE, WATR, DIAM, SUGR, TOYS, BATT, SWET, TOFF, COLA, CTCD, BUBL, PLST, FZDR, AORE, BEER, BDMT, BRCK, CERA, CERE, CLAY, CMNT, COPR, DYES, ENSP, FERT, FICR, FISH, FMSP, FRVG, GLAS, GRVL, JAVA, LIME, MILK, MNSP, OLSD, PETR, PLAS, POTA, RCYC, RFPR, SAND, SCMT, SGBT, SGCN, SULP, VEHI, VPTS, WDPR, WOOL, URAN, YETI, YETY]; cargo_disallow_refit: [PASS, TOUR];

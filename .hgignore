@@ -1,0 +1,18 @@
+syntax: glob
+doc
+draft
+parsetab.py
+custom_tags.txt
+*.src.7z
+*.grf.7z
+*.hg.7z
+config.bat
+WAS.grf
+WAS.grf.cache
+WAS.grf.cacheindex
+WAS.nfo
+WAS.nml
+WAS_dep.txt
+WAS_optimized.nml
+compile.bat
+.nmlcache
