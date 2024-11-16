@@ -132,7 +132,6 @@ item (FEAT_AIRCRAFT, Antonov_124)
     passenger_capacity: 0;
     mail_capacity: 0;
     acceleration: 27;                  // in 27,75 mph/day
-    range: 1075;
     sound_effect: SOUND_TAKEOFF_JET_BIG;
   }
   graphics {
@@ -166,7 +165,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Antonov_124)
   {
     property
-    { range: 1075; }
+    { range: 1875*RangeMultipl/100; }
   }
 }
 

@@ -28,6 +28,26 @@ grf {
       def_value: 4;
     }
   }
+   param 4 {
+    RangeMultipl {
+      type: int;
+      name: string(STR_PARAM_RMULT_NAME);
+      desc: string(STR_PARAM_RMULT_DESC);
+      min_value: 100;
+      max_value: 400;
+      def_value: 100;
+    }
+  }
+    param 5 {
+    RangeMultiplSmallAdd {
+      type: int;
+      name: string(STR_PARAM_RMULTADD_NAME);
+      desc: string(STR_PARAM_RMULTADD_DESC);
+      min_value: 100;
+      max_value: 400;
+      def_value: 100;
+    }
+  }
   param 2 {
     RCosts  {
       type: int;

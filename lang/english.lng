@@ -12,14 +12,18 @@ STR_PARAM_DESC_ENABLE_STANDARD_PLANES                           :Enable all stan
 STR_PARAM_NAME_ENABLE_RANGES                                    :Enable ranges
 STR_PARAM_DESC_ENABLE_RANGES                                    :Enable ranges (max distance)
 STR_PARAM_NAME_RANGES                                           :Ranges
-STR_PARAM_DESC_RANGES                                           :Ranges Normal, Long or Off
+STR_PARAM_DESC_RANGES                                           :Ranges Custom, Long or Off
 STR_PARAM_VALUE_RANGES_OFF                                      :Ranges Off
-STR_PARAM_VALUE_RANGES_NORMAL                                   :Normal Ranges
+STR_PARAM_VALUE_RANGES_NORMAL                                   :Custom Ranges
 STR_PARAM_VALUE_RANGES_LONG                                     :Long Ranges
 STR_PARAM_BCOSTS_NAME                                           :Base cost factor
 STR_PARAM_BCOSTS_DESC                                           :Specifies costs change (0 means 1/16, 4 means no change, 8 means x16)
 STR_PARAM_RCOSTS_NAME                                           :Base running cost factor
 STR_PARAM_RCOSTS_DESC                                           :Specifies running costs change (0 means 1/16, 4 means no change, 8 means x16)
+STR_PARAM_RMULT_NAME						:Base range multiplier
+STR_PARAM_RMULT_DESC						:Base range multiplier by <value>/100
+STR_PARAM_RMULTADD_NAME                                         :Additonal base range multiplier
+STR_PARAM_RMULTADD_DESC                                         :Additonal base range multiplier for small-range planes (<1050) by <value>/100
 #
 # -------- Aeroplanes --------
 STR_AIRV_AIRBUS_A300_600R                                       :Airbus A300-600R
@@ -168,6 +172,7 @@ STR_AIRV_SUD_CARAVELLE_III                                      :SUD Caravelle I
 STR_AIRV_TUPOLEV_TU134                                          :Tupolev Tu-134
 STR_AIRV_TUPOLEV_TU154B                                         :Tupolev Tu-154B
 STR_AIRV_TUPOLEV_TU154M                                         :Tupolev Tu-154M
+STR_AIRV_TUPOLEV_TU144                                          :Tupolev Tu-144
 STR_AIRV_BOEING_TEST                                            :Test
 #
 # -------- Helicopters --------

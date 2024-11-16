@@ -225,7 +225,7 @@ item (FEAT_AIRCRAFT, Ilyushin_62)
     cargo_allow_refit: [PASS, TOUR];
     reliability_decay: 20;
     loading_speed: 22;
-    passenger_capacity: 168;
+    passenger_capacity: 186;
     mail_capacity: 17;
     acceleration: 27;                  // in 27,75 mph/day
     range: 1800;
@@ -242,7 +242,7 @@ item (FEAT_AIRCRAFT, Ilyushin_62)
     running_cost_factor: Ilyushin_62_running_cost_factor;
     sound_effect: Ilyushin_62_sound_effect;
 
-    cost_factor: 169; 
+    cost_factor: 89; 
     purchase_running_cost_factor: 42;
     purchase_speed: plane_speed_kmh(822); 
   }
@@ -262,7 +262,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Ilyushin_62)
   {
     property
-    { range: 1800; }
+    { range: 1600*RangeMultipl/100; }
   }
 }
 

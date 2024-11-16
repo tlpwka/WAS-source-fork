@@ -466,7 +466,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Boeing_737_500)
   {
     property
-    { range: 800; }
+    { range: 800*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

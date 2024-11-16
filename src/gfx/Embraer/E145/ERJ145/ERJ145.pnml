@@ -187,7 +187,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Embraer_ERJ145)
   {
     property
-    { range: 515; }
+    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

@@ -489,7 +489,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Fokker_F100)
   {
     property
-    { range: 570; }
+    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

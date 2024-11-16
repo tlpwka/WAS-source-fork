@@ -141,7 +141,7 @@ item (FEAT_AIRCRAFT, Ilyushin_76)
     speed: Ilyushin_76_speed;
     running_cost_factor: Ilyushin_76_running_cost_factor;
     sound_effect: Ilyushin_76_sound_effect;
-    mail_capacity: return 320;
+    mail_capacity: return 420;
 
     cost_factor: 44; 
     purchase_running_cost_factor: 214;
@@ -163,7 +163,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Ilyushin_76)
   {
     property
-    { range: 1200; }
+    { range: 1600*RangeMultipl/100; }
   }
 }
 

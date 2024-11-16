@@ -266,7 +266,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Douglas_DC10_10)
   {
     property
-    { range: 1100; }
+    { range: 1100*RangeMultipl/100; }
   }
 }
 

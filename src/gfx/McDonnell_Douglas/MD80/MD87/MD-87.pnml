@@ -224,7 +224,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, McDonnell_Douglas_MD87)
   {
     property
-    { range: 790; }
+    { range: 790*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

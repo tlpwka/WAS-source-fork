@@ -369,7 +369,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, SUD_CARAVELLE_III)
   {
     property
-    { range: 655; }
+    { range: 655*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

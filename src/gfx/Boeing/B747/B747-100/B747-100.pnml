@@ -263,7 +263,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Boeing_747_100)
   {
     property
-    { range: 1665; }
+    { range: 1665*RangeMultipl/100; }
   }
 }
 

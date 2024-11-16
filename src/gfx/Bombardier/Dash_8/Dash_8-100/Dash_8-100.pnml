@@ -180,7 +180,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Bombardier_Dash_8_100)
   {
     property
-    { range: 340; }
+    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

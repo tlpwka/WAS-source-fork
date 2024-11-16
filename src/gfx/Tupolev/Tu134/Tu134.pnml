@@ -358,7 +358,7 @@ item (FEAT_AIRCRAFT, Tupolev_Tu134)
     sound_effect: Tupolev_Tu134_sound_effect;
 
     cost_factor: 32; 
-    purchase_running_cost_factor: 83;
+    purchase_running_cost_factor: 63;
     purchase_speed: plane_speed_kmh(902); 
   }
 }
@@ -377,7 +377,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Tupolev_Tu134)
   {
     property
-    { range: 340; }
+    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

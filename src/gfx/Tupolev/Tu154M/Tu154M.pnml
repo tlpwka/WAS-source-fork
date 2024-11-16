@@ -1,8 +1,8 @@
 
 // Tupolev-Tu154M
 
-// Template:
-#define Tupolev_Tu154M_sprite_layout_template(name)                          \
+// Template: 
+#define Tupolev_Tu154M_sprite_layout_template(name)                           \
 spriteset (name##_Flight, IMAGEFILE)                                         \
 {                                                                            \
   [  2, 2, 38, 23, -19, -11, ANIM]                                           \
@@ -13,7 +13,7 @@ spriteset (name##_Flight, IMAGEFILE)                                         \
   [252, 2, 41, 28, -20, -14, ANIM]                                           \
   [301, 2, 52, 21, -26, -10, ANIM]                                           \
   [360, 3, 41, 21, -20, -11, ANIM]                                           \
-}                                                                            \
+}                                                                             \
 spriteset (name##_Grounded, IMAGEFILE)                                       \
 {                                                                            \
   [  2, 40, 38, 23, -19, -11, ANIM]                                          \
@@ -348,7 +348,7 @@ item (FEAT_AIRCRAFT, Tupolev_Tu154M)
     running_cost_factor: Tupolev_Tu154M_running_cost_factor;
 
     cost_factor: 41; 
-    purchase_running_cost_factor: 148;
+    purchase_running_cost_factor: 75;
     purchase_speed: plane_speed_kmh(951); 
   }
 }
@@ -367,7 +367,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Tupolev_Tu154M)
   {
     property
-    { range: 785; }
+    { range: 785*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

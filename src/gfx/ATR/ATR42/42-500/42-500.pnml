@@ -210,7 +210,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, ATR_42_500)
   {
     property
-    { range: 280; }
+    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

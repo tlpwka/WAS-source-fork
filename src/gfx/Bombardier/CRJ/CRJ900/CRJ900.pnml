@@ -195,7 +195,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Bombardier_CRJ900)
   {
     property
-    { range: 350; }
+    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

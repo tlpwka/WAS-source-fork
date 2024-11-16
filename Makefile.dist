@@ -1,0 +1,16 @@
+################################################################
+# Definitions needed for tar releases
+# This part is automatically generated
+################################################################
+REPO_REVISION := 7876
+NEWGRF_VERSION := 7876
+REPO_HASH := 8ddb80d364ec
+REPO_VERSION_STRING := 2021-07-25 (7876:8ddb80d364ec)
+REPO_TITLE := WAS 2021-07-25 (7876:8ddb80d364ec)
+REPO_DATE := 2021-07-25
+REPO_BRANCH := 
+REPO_MODIFIED := 
+REPO_TAGS    := 
+HG := :
+GIT := :
+PYTHON := :
