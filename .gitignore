@@ -1,3 +1,6 @@
+*.tar
+*.7z
+*.grf
 # Cmake output
 CMakeLists.txt.user
 CMakeCache.txt
@@ -20,9 +23,7 @@ out
 build
 build.ninja
 .ninja_log
-*.tar
-*.7z
-*.grf
+
 # Building Tools
 nmlc.exe
 grfid.exe
