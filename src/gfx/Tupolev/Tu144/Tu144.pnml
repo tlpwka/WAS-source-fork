@@ -107,6 +107,19 @@ switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_cargo_subtype_text, cargo_subtype)
      return CB_RESULT_NO_TEXT;
 }
 
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(Tupolev_Tu144_range, Minbaserange) > Minaddmultrange ? return 1;
+    range_high: max(Tupolev_Tu144_range, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
+    default: return 1; // Fallback, if needed
+}
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(340, Minbaserange) > Minaddmultrange ? return 1;
+    range_high: max(340, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
+    default: return 1; // Fallback, if needed
+}
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(340, Minbaserange) > Minaddmultrange ? 1 : RangeMultiplSmallAdd/100;
+}
 item (FEAT_AIRCRAFT, Tupolev_Tu144)
 {
   property
@@ -148,6 +161,19 @@ item (FEAT_AIRCRAFT, Tupolev_Tu144)
 
 if (Ranges == 0)
 {
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(Tupolev_Tu144_range, Minbaserange) > Minaddmultrange ? return 1;
+    range_high: max(Tupolev_Tu144_range, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
+    default: return 1; // Fallback, if needed
+}
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(340, Minbaserange) > Minaddmultrange ? return 1;
+    range_high: max(340, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
+    default: return 1; // Fallback, if needed
+}
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(340, Minbaserange) > Minaddmultrange ? 1 : RangeMultiplSmallAdd/100;
+}
   item (FEAT_AIRCRAFT, Tupolev_Tu144)
   {
     property
@@ -157,6 +183,19 @@ if (Ranges == 0)
 
 if (Ranges == 1)
 {
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(Tupolev_Tu144_range, Minbaserange) > Minaddmultrange ? return 1;
+    range_high: max(Tupolev_Tu144_range, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
+    default: return 1; // Fallback, if needed
+}
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(340, Minbaserange) > Minaddmultrange ? return 1;
+    range_high: max(340, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
+    default: return 1; // Fallback, if needed
+}
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(340, Minbaserange) > Minaddmultrange ? 1 : RangeMultiplSmallAdd/100;
+}
   item (FEAT_AIRCRAFT, Tupolev_Tu144)
   {
     property
@@ -166,6 +205,19 @@ if (Ranges == 1)
 
 if (Ranges == 2)
 {
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(Tupolev_Tu144_range, Minbaserange) > Minaddmultrange ? return 1;
+    range_high: max(Tupolev_Tu144_range, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
+    default: return 1; // Fallback, if needed
+}
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(340, Minbaserange) > Minaddmultrange ? return 1;
+    range_high: max(340, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
+    default: return 1; // Fallback, if needed
+}
+switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
+    range_low: max(340, Minbaserange) > Minaddmultrange ? 1 : RangeMultiplSmallAdd/100;
+}
   item (FEAT_AIRCRAFT, Tupolev_Tu144)
   {
     property

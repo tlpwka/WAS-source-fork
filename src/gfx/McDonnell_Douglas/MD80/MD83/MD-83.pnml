@@ -431,7 +431,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, McDonnell_Douglas_MD83)
   {
     property
-    { range: 835*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 835)> Minaddmultrange ? max(Minbaserange, 835)*RangeMultipl/100 : max(Minbaserange, 835)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

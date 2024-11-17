@@ -690,7 +690,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Boeing_757_200)
   {
     property
-    { range: 1365*RangeMultipl/100; }
+    { range: max(Minbaserange, 1365)> Minaddmultrange ? max(Minbaserange, 1365)*RangeMultipl/100 : max(Minbaserange, 1365)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

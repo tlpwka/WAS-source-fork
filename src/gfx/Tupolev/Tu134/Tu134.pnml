@@ -377,7 +377,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Tupolev_Tu134)
   {
     property
-    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 340)> Minaddmultrange ? max(Minbaserange, 340)*RangeMultipl/100 : max(Minbaserange, 340)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

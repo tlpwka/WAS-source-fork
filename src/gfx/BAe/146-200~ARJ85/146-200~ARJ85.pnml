@@ -295,7 +295,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, BAe_146_200)
   {
     property
-    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 525)> Minaddmultrange ? max(Minbaserange, 525)*RangeMultipl/100 : max(Minbaserange, 525)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

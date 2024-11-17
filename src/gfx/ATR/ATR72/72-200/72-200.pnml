@@ -210,7 +210,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, ATR_72_200)
   {
     property
-    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 290)> Minaddmultrange ? max(Minbaserange, 290)*RangeMultipl/100 : max(Minbaserange, 290)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

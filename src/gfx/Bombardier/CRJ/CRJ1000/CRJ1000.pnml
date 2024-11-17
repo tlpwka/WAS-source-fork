@@ -187,7 +187,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Bombardier_CRJ1000)
   {
     property
-    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 475)> Minaddmultrange ? max(Minbaserange, 475)*RangeMultipl/100 : max(Minbaserange, 475)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

@@ -378,7 +378,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, BAC_1_11_500)
   {
     property
-    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 570)> Minaddmultrange ? max(Minbaserange, 570)*RangeMultipl/100 : max(Minbaserange, 570)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

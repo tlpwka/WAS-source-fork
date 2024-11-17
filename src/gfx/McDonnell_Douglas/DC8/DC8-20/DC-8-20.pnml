@@ -208,7 +208,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Douglas_DC8_20)
   {
     property
-    { range: 1350*RangeMultipl/100; }
+    { range: max(Minbaserange, 1350)> Minaddmultrange ? max(Minbaserange, 1350)*RangeMultipl/100 : max(Minbaserange, 1350)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

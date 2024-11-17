@@ -48,6 +48,26 @@ grf {
       def_value: 100;
     }
   }
+    param 6 {
+    Minbaserange {
+      type: int;
+      name: string(STR_PARAM_MINBR_NAME);
+      desc: string(STR_PARAM_MINBR_DESC);
+      min_value: 100;
+      max_value: 50000;
+      def_value: 100;
+    }
+  }
+  param 7 {
+    Minaddmultrange {
+      type: int;
+      name: string(STR_PARAM_MINAMR_NAME);
+      desc: string(STR_PARAM_MINAMR_DESC);
+      min_value: 100;
+      max_value: 50000;
+      def_value: 1050;
+    }
+  }
   param 2 {
     RCosts  {
       type: int;

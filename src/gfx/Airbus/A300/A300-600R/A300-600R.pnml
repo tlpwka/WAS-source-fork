@@ -350,7 +350,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Airbus_A300_600R)
   {
     property
-    { range: 2230*RangeMultipl/100; }
+    { range: max(Minbaserange, 2230)> Minaddmultrange ? max(Minbaserange, 2230)*RangeMultipl/100 : max(Minbaserange, 2230)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

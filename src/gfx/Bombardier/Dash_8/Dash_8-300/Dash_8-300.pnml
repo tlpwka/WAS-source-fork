@@ -195,7 +195,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Bombardier_Dash_8_300)
   {
     property
-    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 280)> Minaddmultrange ? max(Minbaserange, 280)*RangeMultipl/100 : max(Minbaserange, 280)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

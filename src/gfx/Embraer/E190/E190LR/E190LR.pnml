@@ -277,7 +277,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Embraer_E190LR)
   {
     property
-    { range: 765*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 765)> Minaddmultrange ? max(Minbaserange, 765)*RangeMultipl/100 : max(Minbaserange, 765)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

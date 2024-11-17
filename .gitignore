@@ -20,6 +20,9 @@ out
 build
 build.ninja
 .ninja_log
+*.tar
+*.7z
+*.grf
 # Building Tools
 nmlc.exe
 grfid.exe

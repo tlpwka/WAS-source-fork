@@ -235,7 +235,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Lockheed_L049_Constellation)
   {
     property
-    { range: 1330*RangeMultipl/100; }
+    { range: max(Minbaserange, 1330)> Minaddmultrange ? max(Minbaserange, 1330)*RangeMultipl/100 : max(Minbaserange, 1330)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

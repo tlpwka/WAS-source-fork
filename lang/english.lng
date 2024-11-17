@@ -23,7 +23,11 @@ STR_PARAM_RCOSTS_DESC                                           :Specifies runni
 STR_PARAM_RMULT_NAME						:Base range multiplier
 STR_PARAM_RMULT_DESC						:Base range multiplier by <value>/100
 STR_PARAM_RMULTADD_NAME                                         :Additonal base range multiplier
-STR_PARAM_RMULTADD_DESC                                         :Additonal base range multiplier for small-range planes (<1050) by <value>/100
+STR_PARAM_RMULTADD_DESC                                         :Additonal base range multiplier for small-range planes (<Minimal Small range) by <value>/100
+STR_PARAM_MINBR_NAME                                            :Minimal base range
+STR_PARAM_MINBR_DESC                                            :Minimal base range for all aircrafts befor multipliers
+STR_PARAM_MINAMR_NAME                                           :Minimal small range
+STR_PARAM_MINAMR_DESC                                           :Minimal small range to activaite additional small-range multiplier
 #
 # -------- Aeroplanes --------
 STR_AIRV_AIRBUS_A300_600R                                       :Airbus A300-600R

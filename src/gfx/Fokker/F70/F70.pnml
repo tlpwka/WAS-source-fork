@@ -239,7 +239,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Fokker_F70)
   {
     property
-    { range: 615*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 615)> Minaddmultrange ? max(Minbaserange, 615)*RangeMultipl/100 : max(Minbaserange, 615)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

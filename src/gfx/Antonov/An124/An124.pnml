@@ -165,7 +165,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Antonov_124)
   {
     property
-    { range: 1875*RangeMultipl/100; }
+    { range: max(Minbaserange, 1875)> Minaddmultrange ? max(Minbaserange, 1875)*RangeMultipl/100 : max(Minbaserange, 1875)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

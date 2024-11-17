@@ -180,7 +180,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, Embraer_E195STD)
   {
     property
-    { range: 600*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 465)> Minaddmultrange ? max(Minbaserange, 465)*RangeMultipl/100 : max(Minbaserange, 465)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

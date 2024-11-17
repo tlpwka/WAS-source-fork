@@ -21,17 +21,14 @@ def process_file(filepath):
             match = re.search(r'range: (\d+);', line)
             if match:
                 range_value = int(match.group(1))
-                if range_value < 600:
-                    # Append 600*RangeMultipl*RangeMultiplSmallAdd to the range line
-                    updated_line = re.sub(r'range: (\d+);', f'range: 600*RangeMultipl*RangeMultiplSmallAdd/10000;', line)
-                    updated_lines.append(updated_line)
-                elif range_value < 1050:
-                    # Append *RangeMultipl*RangeMultiplSmallAdd to the range line
-                    updated_line = re.sub(r'range: (\d+);', f'range: {range_value}*RangeMultipl*RangeMultiplSmallAdd/10000;', line)
-                    updated_lines.append(updated_line)
-                else:
-                	updated_line = re.sub(r'range: (\d+);', f'range: {range_value}*RangeMultipl/100;', line)
-                	updated_lines.append(updated_line) 
+                # Append *RangeMultipl*RangeMultiplSmallAdd to the range line
+                updated_line = re.sub(
+                    r'range: (\d+);',
+#                    f'range: max(Minbaserange, {range_value})*RangeMultipl/100*(max(Minbaserange, {range_value})> Minaddmultrange ? 1 : (RangeMultiplSmallAdd/100.0));',
+                    f'range: max(Minbaserange, {range_value})> Minaddmultrange ? max(Minbaserange, {range_value})*RangeMultipl/100 : max(Minbaserange, {range_value})*RangeMultipl*RangeMultiplSmallAdd/10000;',
+                    line
+                )
+                updated_lines.append(updated_line)
                 continue
 
         updated_lines.append(line)
@@ -49,5 +46,4 @@ def process_pnml_files(directory):
 
 # Specify the directory containing .pnml files
 directory = './src'
-process_pnml_files(directory)
-
+process_pnml_files(directory)    
