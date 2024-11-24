@@ -50,7 +50,7 @@ sort (FEAT_AIRCRAFT,
 	//SUD
 	SUD_CARAVELLE_III, 
 	//Tupolev
-	Tupolev_Tu134, Tupolev_Tu154B, Tupolev_Tu154M,
+	Tupolev_Tu134, Tupolev_Tu154B, Tupolev_Tu154M, Tupolev_Tu144
 	
   // Helicopters
 

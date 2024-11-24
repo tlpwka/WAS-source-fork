@@ -170,8 +170,8 @@ item (FEAT_AIRCRAFT, BAC_CONCORDE)
     climates_available: get_climates_available();
     introduction_date: date(get_plane_year(1976), 1, 1);
     vehicle_life: 27;
-    model_life: get_model_life(1976,2003);
-    retire_early: get_retire_early(1976,2003);
+    model_life: get_model_life(1976,2013);
+    retire_early: get_retire_early(1976,2013);
 
     sprite_id: SPRITE_ID_NEW_AIRCRAFT;
     aircraft_type: AIRCRAFT_TYPE_LARGE;
@@ -215,7 +215,7 @@ if (Ranges == 1)
   item (FEAT_AIRCRAFT, BAC_CONCORDE)
   {
     property
-    { range: max(Minbaserange, 1230)> Minaddmultrange ? max(Minbaserange, 1230)*RangeMultipl/100 : max(Minbaserange, 1230)*RangeMultipl*RangeMultiplSmallAdd/10000; }
+    { range: max(Minbaserange, 1830)> Minaddmultrange ? max(Minbaserange, 1230)*RangeMultipl/100 : max(Minbaserange, 1230)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 

@@ -5,62 +5,62 @@
 #define Tupolev_Tu144_sprite_layout_template(name)                             \
 spriteset (name##_Flight, IMAGEFILE)                                         \
 {                                                                            \
-  [  0, 0, 36, 34, -18, -17, ANIM]                                           \
-  [ 45, 0, 52, 29, -26, -15, ANIM]                                           \
-  [108, 0, 74, 22, -37, -11, ANIM]                                           \
-  [192, 0, 53, 35, -27, -18, ANIM]                                           \
-  [255, 0, 36, 38, -18, -19, ANIM]                                           \
-  [301, 0, 53, 35, -27, -18, ANIM]                                           \
-  [364, 0, 74, 22, -37, -11, ANIM]                                           \
-  [448, 0, 52, 29, -26, -15, ANIM]                                           \
+  [  0, 0, 36, 35, -18, -17, ANIM]                                           \
+  [ 40, 0, 54, 30, -27, -15, ANIM]                                           \
+  [100, 0, 76, 22, -38, -11, ANIM]                                           \
+  [181, 0, 55, 36, -28, -18, ANIM]                                           \
+  [240, 0, 36, 40, -18, -20, ANIM]                                           \
+  [280, 0, 55, 35, -28, -18, ANIM]                                           \
+  [340, 0, 76, 21, -38, -11, ANIM]                                           \
+  [420, 0, 54, 30, -27, -15, ANIM]                                           \
 }                                                                            \
 spriteset (name##_Grounded, IMAGEFILE)                                       \
 {                                                                            \
-  [  0, 50, 36, 37, -18, -19, ANIM]                                          \
-  [ 45, 50, 52, 30, -26, -15, ANIM]                                          \
-  [108, 50, 72, 22, -36, -11, ANIM]                                          \
-  [192, 50, 54, 34, -27, -17, ANIM]                                          \
-  [255, 50, 34, 39, -19, -20, ANIM]                                          \
-  [301, 50, 54, 34, -27, -17, ANIM]                                          \
-  [364, 50, 72, 23, -36, -12, ANIM]                                          \
-  [448, 50, 52, 30, -26, -15, ANIM]                                          \
+  [  0, 45, 36, 39, -18, -20, ANIM]                                          \
+  [ 40, 45, 54, 30, -27, -15, ANIM]                                          \
+  [100, 45, 74, 22, -36, -11, ANIM]                                          \
+  [180, 45, 55, 36, -28, -18, ANIM]                                          \
+  [240, 45, 34, 41, -17, -21, ANIM]                                          \
+  [280, 45, 55, 36, -28, -18, ANIM]                                          \
+  [340, 45, 74, 22, -36, -11, ANIM]                                          \
+  [420, 45, 54, 30, -27, -15, ANIM]                                          \
 }                                                                            \
 spriteset (name##_Climbing, IMAGEFILE)                                       \
 {                                                                            \
-  [  0, 100, 36, 50, -18, -25, ANIM]                                         \
-  [ 45, 100, 46, 50, -23, -25, ANIM]                                         \
-  [108, 100, 65, 35, -33, -18, ANIM]                                         \
-  [192, 100, 46, 20, -23, -10, ANIM]                                         \
-  [255, 100, 28, 12, -14, -6 , ANIM]                                         \
-  [301, 100, 46, 20, -23, -10, ANIM]                                         \
-  [364, 100, 65, 35, -33, -18, ANIM]                                         \
-  [448, 100, 46, 50, -23, -25, ANIM]                                         \
+  [  0, 90, 36, 52, -18, -26, ANIM]                                         \
+  [ 40, 90, 48, 52, -24, -26, ANIM]                                         \
+  [100, 90, 67, 36, -28, -18, ANIM]                                         \
+  [180, 90, 46, 21, -23, -11, ANIM]                                         \
+  [240, 90, 28, 12, -14, -6 , ANIM]                                         \
+  [280, 90, 49, 21, -25, -12, ANIM]                                         \
+  [340, 90, 67, 36, -34, -18, ANIM]                                         \
+  [420, 90, 48, 52, -24, -26, ANIM]                                         \
 }                                                                            \
 spriteset (name##_Touchdown, IMAGEFILE)                                      \
 {                                                                            \
-  [  0, 175, 36, 34, -18, -17, ANIM]                                         \
-  [ 45, 175, 52, 29, -26, -11, ANIM]                                         \
-  [108, 175, 73, 22, -37, -11, ANIM]                                         \
-  [192, 175, 53, 36, -27, -18, ANIM]                                         \
-  [255, 175, 34, 42, -17, -21, ANIM]                                         \
-  [301, 175, 53, 36, -27, -18, ANIM]                                         \
-  [364, 175, 73, 23, -37, -12, ANIM]                                         \
-  [448, 175, 52, 29, -26, -15, ANIM]                                         \
+  [  0, 150, 36, 36, -18, -18, ANIM]                                         \
+  [ 50, 150, 54, 30, -27, -15, ANIM]                                         \
+  [100, 150, 75, 22, -38, -11, ANIM]                                         \
+  [180, 150, 57, 36, -29, -18, ANIM]                                         \
+  [240, 150, 34, 42, -17, -21, ANIM]                                         \
+  [280, 150, 57, 36, -29, -18, ANIM]                                         \
+  [340, 150, 75, 22, -38, -11, ANIM]                                         \
+  [420, 150, 54, 30, -27, -15, ANIM]                                         \
 }                                                                            \
 spriteset (name##_Landing, IMAGEFILE)                                        \
 {                                                                            \
-  [  0, 225, 36, 41, -18, -21, ANIM]                                         \
-  [ 45, 225, 51, 36, -26, -18, ANIM]                                         \
-  [108, 225, 72, 22, -36, -11, ANIM]                                         \
-  [192, 225, 52, 27, -26, -14, ANIM]                                         \
-  [255, 225, 34, 32, -17, -16, ANIM]                                         \
-  [301, 225, 52, 27, -26, -14, ANIM]                                         \
-  [364, 225, 72, 22, -36, -11, ANIM]                                         \
-  [448, 225, 51, 26, -26, -18, ANIM]                                         \
+  [  0, 200, 36, 43, -18, -22, ANIM]                                         \
+  [ 40, 200, 52, 37, -26, -19, ANIM]                                         \
+  [100, 200, 74, 23, -37, -12, ANIM]                                         \
+  [180, 200, 55, 28, -28, -14, ANIM]                                         \
+  [240, 200, 34, 32, -17, -16, ANIM]                                         \
+  [280, 200, 55, 28, -28, -14, ANIM]                                         \
+  [340, 200, 74, 23, -37, -12, ANIM]                                         \
+  [421, 200, 52, 37, -26, -19, ANIM]                                         \
 }                                                                            \
 
 #define IMAGEFILE  "src/gfx/Tupolev/Tu144/(0)Greyscale.png"
-purchase_sprite(TU_144, 364, 0, 74, 22, -37, -11)
+purchase_sprite(Tupolev_Tu144, 340, 90, 67, 36, -34, -18)
 Tupolev_Tu144_sprite_layout_template(Tupolev_Tu144_Greyscale) 
 #undef IMAGEFILE
 
@@ -88,7 +88,7 @@ switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_speed, flight_state())
 {
   12..13: return plane_speed_kmh(451); // airplane waiting for take-off clearance, airplane taking off
       15: return plane_speed_kmh(515); // airplane climbing after take-off
-      18: return plane_speed_kmh(2285); // heading for tower contact point
+      18: return plane_speed_kmh(2300); // heading for tower contact point
   16..20: return plane_speed_kmh(547); // in flight
   21..22: return plane_speed_kmh(295); // airplane landing, airplane braking after touchdown
           return plane_speed_kmh(266);
@@ -107,29 +107,16 @@ switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_cargo_subtype_text, cargo_subtype)
      return CB_RESULT_NO_TEXT;
 }
 
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(Tupolev_Tu144_range, Minbaserange) > Minaddmultrange ? return 1;
-    range_high: max(Tupolev_Tu144_range, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
-    default: return 1; // Fallback, if needed
-}
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(340, Minbaserange) > Minaddmultrange ? return 1;
-    range_high: max(340, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
-    default: return 1; // Fallback, if needed
-}
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(340, Minbaserange) > Minaddmultrange ? 1 : RangeMultiplSmallAdd/100;
-}
 item (FEAT_AIRCRAFT, Tupolev_Tu144)
 {
   property
   {
-    name: string(STR_AIRV_Tupolev_Tu144);
+    name: string(STR_AIRV_TUPOLEV_TU144);
     climates_available: get_climates_available();
     introduction_date: date(get_plane_year(1976), 1, 1);
-    vehicle_life: 27;
-    model_life: get_model_life(1976,2003);
-    retire_early: get_retire_early(1976,2003);
+    vehicle_life: 14;
+    model_life: get_model_life(1976,2013);
+    retire_early: get_retire_early(1976,2013);
 
     sprite_id: SPRITE_ID_NEW_AIRCRAFT;
     aircraft_type: AIRCRAFT_TYPE_LARGE;
@@ -153,27 +140,14 @@ item (FEAT_AIRCRAFT, Tupolev_Tu144)
     running_cost_factor: Tupolev_Tu144_running_cost_factor;
     sound_effect: Tupolev_Tu144_sound_effect;
 
-    cost_factor: 160; 
-    purchase_running_cost_factor: 198;
+    cost_factor: 80; 
+    purchase_running_cost_factor: 212;
     purchase_speed: plane_speed_kmh(2300); 
   }
 }
 
 if (Ranges == 0)
 {
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(Tupolev_Tu144_range, Minbaserange) > Minaddmultrange ? return 1;
-    range_high: max(Tupolev_Tu144_range, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
-    default: return 1; // Fallback, if needed
-}
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(340, Minbaserange) > Minaddmultrange ? return 1;
-    range_high: max(340, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
-    default: return 1; // Fallback, if needed
-}
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(340, Minbaserange) > Minaddmultrange ? 1 : RangeMultiplSmallAdd/100;
-}
   item (FEAT_AIRCRAFT, Tupolev_Tu144)
   {
     property
@@ -183,41 +157,15 @@ switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
 
 if (Ranges == 1)
 {
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(Tupolev_Tu144_range, Minbaserange) > Minaddmultrange ? return 1;
-    range_high: max(Tupolev_Tu144_range, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
-    default: return 1; // Fallback, if needed
-}
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(340, Minbaserange) > Minaddmultrange ? return 1;
-    range_high: max(340, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
-    default: return 1; // Fallback, if needed
-}
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(340, Minbaserange) > Minaddmultrange ? 1 : RangeMultiplSmallAdd/100;
-}
   item (FEAT_AIRCRAFT, Tupolev_Tu144)
   {
     property
-    { range: 1230*RangeMultipl/100; }
+    { range: max(Minbaserange, 1230)> Minaddmultrange ? max(Minbaserange, 1230)*RangeMultipl/100 : max(Minbaserange, 1230)*RangeMultipl*RangeMultiplSmallAdd/10000; }
   }
 }
 
 if (Ranges == 2)
 {
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(Tupolev_Tu144_range, Minbaserange) > Minaddmultrange ? return 1;
-    range_high: max(Tupolev_Tu144_range, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
-    default: return 1; // Fallback, if needed
-}
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(340, Minbaserange) > Minaddmultrange ? return 1;
-    range_high: max(340, Minbaserange) <= Minaddmultrange ? return RangeMultiplSmallAdd/100;
-    default: return 1; // Fallback, if needed
-}
-switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_RangeMultiplier, cargo_subtype) {
-    range_low: max(340, Minbaserange) > Minaddmultrange ? 1 : RangeMultiplSmallAdd/100;
-}
   item (FEAT_AIRCRAFT, Tupolev_Tu144)
   {
     property
