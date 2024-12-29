@@ -1,4 +1,3 @@
-
 // Embraer-E195STD
 
 // Template:
@@ -126,6 +125,13 @@ switch (FEAT_AIRCRAFT, SELF, Embraer_E195STD_cargo_subtype_capacity, cargo_subty
      return 118;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Embraer_E195STD_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 465)> Minaddmultrange ? max(Minbaserange, 465)*RangeMultipl/100 : max(Minbaserange, 465)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 700;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Embraer_E195STD)
 {
   property
@@ -149,8 +155,7 @@ item (FEAT_AIRCRAFT, Embraer_E195STD)
     range: 465;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: Embraer_E195STD_sprites;
+  graphics {default: Embraer_E195STD_sprites;
     purchase: Embraer_E195STD_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -162,33 +167,6 @@ item (FEAT_AIRCRAFT, Embraer_E195STD)
 
     cost_factor: 37; 
     purchase_running_cost_factor: 74;
-    purchase_speed: plane_speed_kmh(886); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Embraer_E195STD)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Embraer_E195STD)
-  {
-    property
-    { range: max(Minbaserange, 465)> Minaddmultrange ? max(Minbaserange, 465)*RangeMultipl/100 : max(Minbaserange, 465)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Embraer_E195STD)
-  {
-    property
-    { range: 700; }
-  }
+    purchase_speed: plane_speed_kmh(886);
+    range: sw_Embraer_E195STD_range();}
 }

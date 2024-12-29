@@ -1,4 +1,3 @@
-
 // TU-144
 
 // Template: 
@@ -107,6 +106,13 @@ switch (FEAT_AIRCRAFT, SELF, Tupolev_Tu144_cargo_subtype_text, cargo_subtype)
      return CB_RESULT_NO_TEXT;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Tupolev_Tu144_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 1230)> Minaddmultrange ? max(Minbaserange, 1230)*RangeMultipl/100 : max(Minbaserange, 1230)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 1845;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Tupolev_Tu144)
 {
   property
@@ -130,8 +136,7 @@ item (FEAT_AIRCRAFT, Tupolev_Tu144)
     range: 1230;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: Tupolev_Tu144_sprites;
+  graphics {default: Tupolev_Tu144_sprites;
     purchase: Tupolev_Tu144_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -142,33 +147,6 @@ item (FEAT_AIRCRAFT, Tupolev_Tu144)
 
     cost_factor: 80; 
     purchase_running_cost_factor: 212;
-    purchase_speed: plane_speed_kmh(2300); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Tupolev_Tu144)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Tupolev_Tu144)
-  {
-    property
-    { range: max(Minbaserange, 1230)> Minaddmultrange ? max(Minbaserange, 1230)*RangeMultipl/100 : max(Minbaserange, 1230)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Tupolev_Tu144)
-  {
-    property
-    { range: 1845; }
-  }
+    purchase_speed: plane_speed_kmh(2300);
+    range: sw_Tupolev_Tu144_range();}
 }

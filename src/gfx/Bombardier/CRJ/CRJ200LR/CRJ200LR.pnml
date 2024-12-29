@@ -1,4 +1,3 @@
-
 // Bombardier-CRJ200LR
 
 // Template: 
@@ -186,6 +185,13 @@ switch (FEAT_AIRCRAFT, SELF, Bombardier_CRJ200LR_cargo_subtype_capacity, cargo_s
      return 50;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Bombardier_CRJ200LR_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 670)> Minaddmultrange ? max(Minbaserange, 670)*RangeMultipl/100 : max(Minbaserange, 670)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 1000;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Bombardier_CRJ200LR)
 {
   property
@@ -209,8 +215,7 @@ item (FEAT_AIRCRAFT, Bombardier_CRJ200LR)
     range: 670;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: Bombardier_CRJ200LR_sprites;
+  graphics {default: Bombardier_CRJ200LR_sprites;
     purchase: Bombardier_CRJ200LR_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -222,33 +227,6 @@ item (FEAT_AIRCRAFT, Bombardier_CRJ200LR)
 
     cost_factor: 28; 
     purchase_running_cost_factor: 31;
-    purchase_speed: plane_speed_kmh(814); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Bombardier_CRJ200LR)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Bombardier_CRJ200LR)
-  {
-    property
-    { range: max(Minbaserange, 670)> Minaddmultrange ? max(Minbaserange, 670)*RangeMultipl/100 : max(Minbaserange, 670)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Bombardier_CRJ200LR)
-  {
-    property
-    { range: 1000; }
-  }
+    purchase_speed: plane_speed_kmh(814);
+    range: sw_Bombardier_CRJ200LR_range();}
 }

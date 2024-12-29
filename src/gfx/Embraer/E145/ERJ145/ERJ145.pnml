@@ -1,4 +1,3 @@
-
 // Embraer-ERJ145
 
 // Template: 
@@ -134,6 +133,13 @@ switch (FEAT_AIRCRAFT, SELF, Embraer_ERJ145_cargo_subtype_capacity, cargo_subtyp
      return 50;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Embraer_ERJ145_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 515)> Minaddmultrange ? max(Minbaserange, 515)*RangeMultipl/100 : max(Minbaserange, 515)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 775;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Embraer_ERJ145)
 {
   property
@@ -157,8 +163,7 @@ item (FEAT_AIRCRAFT, Embraer_ERJ145)
     range: 515;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: Embraer_ERJ145_sprites;
+  graphics {default: Embraer_ERJ145_sprites;
     purchase: Embraer_ERJ145_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -169,33 +174,6 @@ item (FEAT_AIRCRAFT, Embraer_ERJ145)
 
     cost_factor: 14; 
     purchase_running_cost_factor: 28;
-    purchase_speed: plane_speed_kmh(829); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Embraer_ERJ145)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Embraer_ERJ145)
-  {
-    property
-    { range: max(Minbaserange, 515)> Minaddmultrange ? max(Minbaserange, 515)*RangeMultipl/100 : max(Minbaserange, 515)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Embraer_ERJ145)
-  {
-    property
-    { range: 775; }
-  }
+    purchase_speed: plane_speed_kmh(829);
+    range: sw_Embraer_ERJ145_range();}
 }

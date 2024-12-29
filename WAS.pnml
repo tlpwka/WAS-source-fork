@@ -7,6 +7,7 @@
 #include "src/definition.pnml"
 #include "src/graph_templates.pnml"
 #include "src/disable_origin.pnml"
+#include "src/costs.pnml"
 
 // Planes
 #include "src/gfx/Airbus/A300/A300-600R/A300-600R.pnml"

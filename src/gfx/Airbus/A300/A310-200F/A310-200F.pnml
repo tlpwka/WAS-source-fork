@@ -1,4 +1,3 @@
-
 // Airbus-A310_200F
 
 // Template: 
@@ -114,6 +113,13 @@ switch (FEAT_AIRCRAFT, SELF, Airbus_A310_200F_cargo_subtype_text, cargo_subtype)
      return CB_RESULT_NO_TEXT;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Airbus_A310_200F_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 1000)> Minaddmultrange ? max(Minbaserange, 1000)*RangeMultipl/100 : max(Minbaserange, 1000)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 1500;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Airbus_A310_200F)
 {
   property
@@ -137,8 +143,7 @@ item (FEAT_AIRCRAFT, Airbus_A310_200F)
     range: 1000;
     sound_effect: SOUND_TAKEOFF_JET_BIG;
   }
-  graphics {
-    default: Airbus_A310_200F_sprites;
+  graphics {default: Airbus_A310_200F_sprites;
     purchase: Airbus_A310_200F_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -149,33 +154,6 @@ item (FEAT_AIRCRAFT, Airbus_A310_200F)
 
     cost_factor: 134; 
     purchase_running_cost_factor: 126;
-    purchase_speed: plane_speed_kmh(902); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Airbus_A310_200F)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Airbus_A310_200F)
-  {
-    property
-    { range: max(Minbaserange, 1000)> Minaddmultrange ? max(Minbaserange, 1000)*RangeMultipl/100 : max(Minbaserange, 1000)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Airbus_A310_200F)
-  {
-    property
-    { range: 1500; }
-  }
+    purchase_speed: plane_speed_kmh(902);
+    range: sw_Airbus_A310_200F_range();}
 }

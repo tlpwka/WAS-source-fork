@@ -1,4 +1,3 @@
-
 // ATR-72-200F
 
 // Template: 
@@ -134,6 +133,13 @@ switch (FEAT_AIRCRAFT, SELF, ATR_72_200F_cargo_subtype_text, cargo_subtype)
      return CB_RESULT_NO_TEXT;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_ATR_72_200F_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 290)> Minaddmultrange ? max(Minbaserange, 290)*RangeMultipl/100 : max(Minbaserange, 290)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 435;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, ATR_72_200F)
 {
   property
@@ -157,8 +163,7 @@ item (FEAT_AIRCRAFT, ATR_72_200F)
     range: 290;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: ATR_72_200F_sprites;
+  graphics {default: ATR_72_200F_sprites;
     purchase: ATR_72_200F_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -169,33 +174,6 @@ item (FEAT_AIRCRAFT, ATR_72_200F)
 
     cost_factor: 19; 
     purchase_running_cost_factor: 39;
-    purchase_speed: plane_speed_kmh(523); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, ATR_72_200F)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, ATR_72_200F)
-  {
-    property
-    { range: max(Minbaserange, 290)> Minaddmultrange ? max(Minbaserange, 290)*RangeMultipl/100 : max(Minbaserange, 290)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, ATR_72_200F)
-  {
-    property
-    { range: 435; }
-  }
+    purchase_speed: plane_speed_kmh(523);
+    range: sw_ATR_72_200F_range();}
 }

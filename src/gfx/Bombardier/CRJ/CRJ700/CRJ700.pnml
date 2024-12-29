@@ -1,4 +1,3 @@
-
 // Bombardier-CRJ700
 
 // Template: 
@@ -141,6 +140,13 @@ switch (FEAT_AIRCRAFT, SELF, Bombardier_CRJ700_cargo_subtype_capacity, cargo_sub
      return 70;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Bombardier_CRJ700_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 405)> Minaddmultrange ? max(Minbaserange, 405)*RangeMultipl/100 : max(Minbaserange, 405)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 610;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Bombardier_CRJ700)
 {
   property
@@ -164,8 +170,7 @@ item (FEAT_AIRCRAFT, Bombardier_CRJ700)
     range: 405;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: Bombardier_CRJ700_sprites;
+  graphics {default: Bombardier_CRJ700_sprites;
     purchase: Bombardier_CRJ700_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -177,33 +182,6 @@ item (FEAT_AIRCRAFT, Bombardier_CRJ700)
 
     cost_factor: 22; 
     purchase_running_cost_factor: 45;
-    purchase_speed: plane_speed_kmh(830); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Bombardier_CRJ700)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Bombardier_CRJ700)
-  {
-    property
-    { range: max(Minbaserange, 405)> Minaddmultrange ? max(Minbaserange, 405)*RangeMultipl/100 : max(Minbaserange, 405)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Bombardier_CRJ700)
-  {
-    property
-    { range: 610; }
-  }
+    purchase_speed: plane_speed_kmh(830);
+    range: sw_Bombardier_CRJ700_range();}
 }

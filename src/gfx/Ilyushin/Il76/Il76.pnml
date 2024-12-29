@@ -1,4 +1,3 @@
-
 // Ilyushin-76
 
 // Template: 
@@ -109,6 +108,13 @@ switch (FEAT_AIRCRAFT, SELF, Ilyushin_76_cargo_subtype_text, cargo_subtype)
      return CB_RESULT_NO_TEXT;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Ilyushin_76_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 1600)> Minaddmultrange ? max(Minbaserange, 1600)*RangeMultipl/100 : max(Minbaserange, 1600)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 1800;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Ilyushin_76)
 {
   property
@@ -132,8 +138,7 @@ item (FEAT_AIRCRAFT, Ilyushin_76)
     range: 1200;
     sound_effect: SOUND_TAKEOFF_JET_BIG;
   }
-  graphics {
-    default: Ilyushin_76_sprites;
+  graphics {default: Ilyushin_76_sprites;
     purchase: Ilyushin_76_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -145,33 +150,6 @@ item (FEAT_AIRCRAFT, Ilyushin_76)
 
     cost_factor: 44; 
     purchase_running_cost_factor: 214;
-    purchase_speed: plane_speed_kmh(798); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Ilyushin_76)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Ilyushin_76)
-  {
-    property
-    { range: max(Minbaserange, 1600)> Minaddmultrange ? max(Minbaserange, 1600)*RangeMultipl/100 : max(Minbaserange, 1600)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Ilyushin_76)
-  {
-    property
-    { range: 1800; }
-  }
+    purchase_speed: plane_speed_kmh(798);
+    range: sw_Ilyushin_76_range();}
 }

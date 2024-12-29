@@ -195,6 +195,25 @@ switch (FEAT_AIRCRAFT, SELF, Airbus_A318_cargo_subtype_capacity, cargo_subtype)
    return 107;
 }
 
+
+// Define a switch for range based on Ranges parameter
+switch (FEAT_AIRCRAFT, SELF, sw_Airbus_A318_range, Ranges) {
+    0: return Airbus_A318_cargo_subtype_capacity;
+    1: return max(Minbaserange, 665) > Minaddmultrange ? 
+                max(Minbaserange, 665) * RangeMultipl / 100 : 
+                max(Minbaserange, 665) * RangeMultipl * RangeMultiplSmallAdd / 10000;
+    2: return 1000;
+    default: return 0; // Fallback for unexpected values
+}
+
+switch (FEAT_AIRCRAFT, SELF, Airbus_A318_capacity, cargo_capacity) {
+    0: return Airbus_A318_cargo_subtype_capacity;
+}
+
+switch (FEAT_AIRCRAFT, SELF, Airbus_A318_travel_time, cargo_capacity) {
+    0: return ((sw_Airbus_A318_range()) / (((Airbus_A318_speed()) / 3600 * 16 * 256) / (74 * 2) * 24 / 10 * 2) + 12);
+}
+
 item (FEAT_AIRCRAFT, Airbus_A318)
 {
   property
@@ -218,8 +237,7 @@ item (FEAT_AIRCRAFT, Airbus_A318)
     range: 665;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: Airbus_A318_sprites;
+  graphics {default: Airbus_A318_sprites;
     purchase: Airbus_A318_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -228,35 +246,10 @@ item (FEAT_AIRCRAFT, Airbus_A318)
     speed: Airbus_A318_speed;
     running_cost_factor: Airbus_A318_running_cost_factor;
 
-    cost_factor: 57; 
-    purchase_running_cost_factor: 90;
-    purchase_speed: plane_speed_kmh(854); 
-  }
+    cost_factor: 155*sw_Airbus_A318_range()/10000; 
+    purchase_running_cost_factor: 361;
+    purchase_speed: plane_speed_kmh(854);
+    range: sw_Airbus_A318_range();}
 }
 
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Airbus_A318)
-  {
-    property
-    { range: 0; }
-  }
-}
 
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Airbus_A318)
-  {
-    property
-    { range: max(Minbaserange, 665)> Minaddmultrange ? max(Minbaserange, 665)*RangeMultipl/100 : max(Minbaserange, 665)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Airbus_A318)
-  {
-    property
-    { range: 1000; }
-  }
-}

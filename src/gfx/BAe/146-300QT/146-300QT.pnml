@@ -1,4 +1,3 @@
-
 // BAe-146-300QT
 
 // Template:
@@ -121,6 +120,13 @@ switch (FEAT_AIRCRAFT, SELF, BAe_146_300QT_cargo_subtype_text, cargo_subtype)
      return CB_RESULT_NO_TEXT;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_BAe_146_300QT_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 495)> Minaddmultrange ? max(Minbaserange, 495)*RangeMultipl/100 : max(Minbaserange, 495)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 745;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, BAe_146_300QT)
 {
   property
@@ -144,8 +150,7 @@ item (FEAT_AIRCRAFT, BAe_146_300QT)
     range: 495;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: BAe_146_300QT_sprites;
+  graphics {default: BAe_146_300QT_sprites;
     purchase: BAe_146_300QT_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -156,33 +161,6 @@ item (FEAT_AIRCRAFT, BAe_146_300QT)
 
     cost_factor: 24; 
     purchase_running_cost_factor: 56;
-    purchase_speed: plane_speed_kmh(781); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, BAe_146_300QT)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, BAe_146_300QT)
-  {
-    property
-    { range: max(Minbaserange, 495)> Minaddmultrange ? max(Minbaserange, 495)*RangeMultipl/100 : max(Minbaserange, 495)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, BAe_146_300QT)
-  {
-    property
-    { range: 745; }
-  }
+    purchase_speed: plane_speed_kmh(781);
+    range: sw_BAe_146_300QT_range();}
 }

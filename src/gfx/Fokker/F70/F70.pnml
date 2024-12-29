@@ -1,4 +1,3 @@
-
 // Fokker-F70
 
 // Template: 
@@ -185,6 +184,13 @@ switch (FEAT_AIRCRAFT, SELF, Fokker_F70_cargo_subtype_capacity, cargo_subtype)
   return 79;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Fokker_F70_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 615)> Minaddmultrange ? max(Minbaserange, 615)*RangeMultipl/100 : max(Minbaserange, 615)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 920;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Fokker_F70)
 {
   property
@@ -208,8 +214,7 @@ item (FEAT_AIRCRAFT, Fokker_F70)
     range: 615;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: Fokker_F70_sprites;
+  graphics {default: Fokker_F70_sprites;
     purchase: Fokker_F70_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -221,33 +226,6 @@ item (FEAT_AIRCRAFT, Fokker_F70)
 
     cost_factor: 18; 
     purchase_running_cost_factor: 46;
-    purchase_speed: plane_speed_kmh(838); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Fokker_F70)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Fokker_F70)
-  {
-    property
-    { range: max(Minbaserange, 615)> Minaddmultrange ? max(Minbaserange, 615)*RangeMultipl/100 : max(Minbaserange, 615)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Fokker_F70)
-  {
-    property
-    { range: 920; }
-  }
+    purchase_speed: plane_speed_kmh(838);
+    range: sw_Fokker_F70_range();}
 }

@@ -1,4 +1,3 @@
-
 // Bombardier-Dash8-300Q
 
 // Template: 
@@ -186,6 +185,13 @@ switch (FEAT_AIRCRAFT, SELF, Bombardier_Dash_8_300Q_cargo_subtype_capacity, carg
      return 50;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Bombardier_Dash_8_300Q_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 280)> Minaddmultrange ? max(Minbaserange, 280)*RangeMultipl/100 : max(Minbaserange, 280)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 420;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Bombardier_Dash_8_300Q)
 {
   property
@@ -209,8 +215,7 @@ item (FEAT_AIRCRAFT, Bombardier_Dash_8_300Q)
     range: 280;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: Bombardier_Dash_8_300Q_sprites;
+  graphics {default: Bombardier_Dash_8_300Q_sprites;
     purchase: Bombardier_Dash_8_300Q_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -222,33 +227,6 @@ item (FEAT_AIRCRAFT, Bombardier_Dash_8_300Q)
 
     cost_factor: 14; 
     purchase_running_cost_factor: 29;
-    purchase_speed: plane_speed_kmh(531); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Bombardier_Dash_8_300Q)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Bombardier_Dash_8_300Q)
-  {
-    property
-    { range: max(Minbaserange, 280)> Minaddmultrange ? max(Minbaserange, 280)*RangeMultipl/100 : max(Minbaserange, 280)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Bombardier_Dash_8_300Q)
-  {
-    property
-    { range: 420; }
-  }
+    purchase_speed: plane_speed_kmh(531);
+    range: sw_Bombardier_Dash_8_300Q_range();}
 }

@@ -1,4 +1,3 @@
-
 // Airbus-A321_100
 
 // Template: 
@@ -225,6 +224,13 @@ switch (FEAT_AIRCRAFT, SELF, Airbus_A321_100_cargo_subtype_capacity, cargo_subty
   return 185;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Airbus_A321_100_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 785)> Minaddmultrange ? max(Minbaserange, 785)*RangeMultipl/100 : max(Minbaserange, 785)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 1175;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Airbus_A321_100)
 {
   property
@@ -247,8 +253,7 @@ item (FEAT_AIRCRAFT, Airbus_A321_100)
     acceleration: 27;                  // in 27,75 mph/day
     range: 785;
   }
-  graphics {
-    default: Airbus_A321_100_sprites;
+  graphics {default: Airbus_A321_100_sprites;
     purchase: Airbus_A321_100_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -259,33 +264,6 @@ item (FEAT_AIRCRAFT, Airbus_A321_100)
 
     cost_factor: 84; 
     purchase_running_cost_factor: 75;
-    purchase_speed: plane_speed_kmh(902); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Airbus_A321_100)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Airbus_A321_100)
-  {
-    property
-    { range: max(Minbaserange, 785)> Minaddmultrange ? max(Minbaserange, 785)*RangeMultipl/100 : max(Minbaserange, 785)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Airbus_A321_100)
-  {
-    property
-    { range: 1175; }
-  }
+    purchase_speed: plane_speed_kmh(902);
+    range: sw_Airbus_A321_100_range();}
 }

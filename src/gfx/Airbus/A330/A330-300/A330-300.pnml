@@ -1,4 +1,3 @@
-
 // Airbus-A330_300
 
 // Template: 
@@ -570,6 +569,13 @@ switch (FEAT_AIRCRAFT, SELF, Airbus_A330_300_cargo_subtype_capacity, cargo_subty
   return 295;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_Airbus_A330_300_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 1950)> Minaddmultrange ? max(Minbaserange, 1950)*RangeMultipl/100 : max(Minbaserange, 1950)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 2925;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, Airbus_A330_300)
 {
   property
@@ -593,8 +599,7 @@ item (FEAT_AIRCRAFT, Airbus_A330_300)
     range: 1950;
     sound_effect: SOUND_TAKEOFF_JET_BIG;
   }
-  graphics {
-    default: Airbus_A330_300_sprites;
+  graphics {default: Airbus_A330_300_sprites;
     purchase: Airbus_A330_300_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -605,33 +610,6 @@ item (FEAT_AIRCRAFT, Airbus_A330_300)
 
     cost_factor: 187; 
     purchase_running_cost_factor: 166;
-    purchase_speed: plane_speed_kmh(926); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Airbus_A330_300)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Airbus_A330_300)
-  {
-    property
-    { range: max(Minbaserange, 1950)> Minaddmultrange ? max(Minbaserange, 1950)*RangeMultipl/100 : max(Minbaserange, 1950)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Airbus_A330_300)
-  {
-    property
-    { range: 2925; }
-  }
+    purchase_speed: plane_speed_kmh(926);
+    range: sw_Airbus_A330_300_range();}
 }

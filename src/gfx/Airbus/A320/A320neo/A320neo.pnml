@@ -457,29 +457,9 @@ item (FEAT_AIRCRAFT , Airbus_A320neo)
   }
 }
 
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, Airbus_A320neo)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, Airbus_A320neo)
-  {
-    property
-    { range: max(Minbaserange, 1165)> Minaddmultrange ? max(Minbaserange, 1165)*RangeMultipl/100 : max(Minbaserange, 1165)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, Airbus_A320neo)
-  {
-    property
-    { range: 1750; }
-  }
+switch (FEAT_AIRCRAFT, SELF, sw_Airbus_A320neo_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 1165)> Minaddmultrange ? max(Minbaserange, 1165)*RangeMultipl/100 : max(Minbaserange, 1165)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 1750;
+    default: return 0; // Fallback for unexpected values
 }

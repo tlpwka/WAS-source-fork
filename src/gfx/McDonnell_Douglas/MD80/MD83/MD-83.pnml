@@ -1,4 +1,3 @@
-
 // McDonnell_Douglas_MD-83
 
 // Template: 
@@ -377,6 +376,13 @@ switch (FEAT_AIRCRAFT, SELF, McDonnell_Douglas_MD83_cargo_subtype_capacity, carg
      return 155;
 }
 
+switch (FEAT_AIRCRAFT, SELF, sw_McDonnell_Douglas_MD83_range, Ranges) {
+    0: return 0;
+    1: return max(Minbaserange, 835)> Minaddmultrange ? max(Minbaserange, 835)*RangeMultipl/100 : max(Minbaserange, 835)*RangeMultipl*RangeMultiplSmallAdd/10000;
+    2: return 1250;
+    default: return 0; // Fallback for unexpected values
+}
+
 item (FEAT_AIRCRAFT, McDonnell_Douglas_MD83)
 {
   property
@@ -400,8 +406,7 @@ item (FEAT_AIRCRAFT, McDonnell_Douglas_MD83)
     range: 835;
     sound_effect: SOUND_TAKEOFF_JET;
   }
-  graphics {
-    default: McDonnell_Douglas_MD83_sprites;
+  graphics {default: McDonnell_Douglas_MD83_sprites;
     purchase: McDonnell_Douglas_MD83_purchase_sprite;
     colour_mapping: PALETTE_CC_FIRST;
 
@@ -413,33 +418,6 @@ item (FEAT_AIRCRAFT, McDonnell_Douglas_MD83)
 
     cost_factor: 57; 
     purchase_running_cost_factor: 79;
-    purchase_speed: plane_speed_kmh(841); 
-  }
-}
-
-if (Ranges == 0)
-{
-  item (FEAT_AIRCRAFT, McDonnell_Douglas_MD83)
-  {
-    property
-    { range: 0; }
-  }
-}
-
-if (Ranges == 1)
-{
-  item (FEAT_AIRCRAFT, McDonnell_Douglas_MD83)
-  {
-    property
-    { range: max(Minbaserange, 835)> Minaddmultrange ? max(Minbaserange, 835)*RangeMultipl/100 : max(Minbaserange, 835)*RangeMultipl*RangeMultiplSmallAdd/10000; }
-  }
-}
-
-if (Ranges == 2)
-{
-  item (FEAT_AIRCRAFT, McDonnell_Douglas_MD83)
-  {
-    property
-    { range: 1250; }
-  }
+    purchase_speed: plane_speed_kmh(841);
+    range: sw_McDonnell_Douglas_MD83_range();}
 }
